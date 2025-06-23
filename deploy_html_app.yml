@@ -1,8 +1,11 @@
 - name: Deploy Static Sagar App Page with Apache
-  hosts: webservers
+  hosts: adarsh
   become: yes
-
   vars:
+    ansible_user: adarsh
+    ansible_ssh_pass: a
+    ansible_become_pass: a
+    ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
     app_dir: /var/www/html/sagarapp
     repo_url: https://github.com/chsagar001/AWSAutomation.git
     apache_site_conf_path: /etc/apache2/sites-available/sagarapp.conf
